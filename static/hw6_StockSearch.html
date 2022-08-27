@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link type="text/css" rel="stylesheet" href="/static/hw6style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <script src="/static/script.js" defer></script>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data-2012-2022.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+<div class="search_area">
+
+
+    <div class="search_header">Stock Search</div>
+
+    <form class="search_form" action="">
+
+        <label for="name">Enter Stock Ticker Symbol <span>*</span></label>
+        <input class="search_text" type="text" value="" name="ticker_name" autocomplete="off" required/>
+
+        <br>
+
+        <input class="input_button" type="submit" value="Search" id="submit_but"/>
+        <input class="input_button" type="reset" value="Clear" id="reset_but"/>
+
+    </form>
+</div>
+
+
+
+
+<div class="line"></div>
+
+<div id="error_search_result">
+    <div class="error_msg">Error : No record has been found, please enter a valid symbol.</div>
+</div>
+
+
+
+<div id="search_result">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'outlook-content')">Company Outlook</button>
+        <button class="tablinks" onclick="openTab(event, 'summary-content')">Stock Summary</button>
+        <button class="tablinks" onclick="openTab(event, 'charts-content')">Charts</button>
+        <button class="tablinks" onclick="openTab(event, 'news-content')">Latest News</button>
+    </div>
+    
+
+    <div id="outlook-content" class="tabcontent">
+        <!--        insert outlook table-->
+    </div>
+
+
+    <div id="summary-content" class="tabcontent">
+        <!--        insert summary table-->
+    </div>
+
+    <div id="charts-content" class="tabcontent">
+        <div id="charts-area"></div>
+    </div>
+
+    <div id="news-content" class="tabcontent">
+        <!--        insert news-->
+    </div>
+
+</div>
+
+</body>
+</html>
